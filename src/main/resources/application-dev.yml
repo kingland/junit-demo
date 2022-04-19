@@ -1,0 +1,47 @@
+server:
+  port: 8088
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  #datasource:
+    #jdbc-url: jdbc:mariadb://172.29.64.43:3306/SVEINTRA?useUnicode=yes&characterEncoding=UTF-8&characterSetResults=UTF-8
+    #username: sveintra
+    #password: sveintra@svepass
+    #driver-class-name: org.mariadb.jdbc.Driver
+    #testOnBorrow: true
+    #testWhileIdle: true
+    #timeBetweenEvictionRunsMillis: 60000
+    #minEvictableIdleTimeMillis: 30000
+    #validationQuery: SELECT 1
+    #max-active: 15
+    #max-idle: 10
+    #max-wait: 8000
+    #hikari:
+      #maximum-pool-size: 1s
+
+  #jpa:
+    #show-sql: true
+
+      #cloud:
+      #consul:
+      #host: localhost
+      #port: 8500
+      #discovery:
+      #healthCheckPath: /api/cloud/health-check
+      #healthCheckInterval: 20s
+      #healthCheckInterval: 30s
+      #enabled: true
+      #instanceId: ${spring.application.name}:${random.value}
+    #instanceId: ${spring.application.name}
+  #scheduler:
+    #enabled: true
+
+
+logging:
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss} [${spring.application.name},${build.version}] [%M\(%F:%L\)] : %msg%n'
+  level:
+    com.netflix.discovery: OFF

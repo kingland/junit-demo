@@ -1,0 +1,55 @@
+server:
+  max-http-header-size: 10000000
+
+application:
+  name: '@project.artifactId@'
+
+build:
+  version: '@project.version@'
+  timestamp: '@timestamp@'
+
+spring:
+  profiles:
+    active: dev
+
+  application:
+    name: '@project.name@'
+
+  messages:
+    basename: i18n/message
+
+      #cache:
+      #type: redis
+
+      #data:
+      #jpa:
+      #repositories:
+      #enabled: true
+      #jpa:
+      #show-sql: false
+      #properties:
+      # hibernate:
+      #dialect: org.hibernate.dialect.MariaDBDialect
+      #database-platform: org.hibernate.dialect.MariaDBDialect
+      #hibernate:
+      #ddl-auto: none
+      #naming:
+      #physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    #implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+    #generate-ddl: false
+    #database: default
+
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+
+
+logging:
+  #  pattern:
+  #    console: '[%-8(%X{LOG_TYPE})] %d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN} [${spring.application.name},${build.version}] [%M\(%F:%L\)] : %msg%n'
+  level:
+    root: INFO
+    org.hibernate.type: OFF
+    org.springframework.web: ERROR
+    pccth.sp.member.service: INFO
